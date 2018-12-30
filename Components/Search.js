@@ -1,21 +1,28 @@
-// import * as React from 'react';
-// Components/Search.js
-
 import React from 'react'
-import { View, TextInput, Button } from 'react-native'
+import { StyleSheet, View, TextInput, Button, Text, FlatList } from 'react-native'
 
 class Search extends React.Component {
   render() {
     return (
-      <View>
-        <TextInput placeholder='Titre du film'/>
-        <Button style={{height: 50}}title='Rechercher' onPress={() => {}}/>
+      <View style={styles.main_container}>
+        <TextInput style={styles.textinput} placeholder='Titre du film'/>
+        <Button style={{height: 50}} title='Rechercher' onPress={() => {}}/>
+      
+      <FlatList 
+        data={[{key: 'a'}, {key: 'b'}]}
+        renderItem={({item}) => <Text> {item.key} </Text>}    
+      />
+      
       </View>
     )
   }
 }
 
-const styles = {
+const styles = StyleSheet.create ({
+  main_container: {
+    marginTop: 20,
+    flex:1
+  },
   textinput: {
     marginLeft: 5,
     marginRight: 5,
@@ -25,9 +32,7 @@ const styles = {
     paddingLeft: 5
 
   }
-
-}
-
+})
 
 export default Search 
 
