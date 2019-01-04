@@ -1,0 +1,3 @@
+// API/TMDBApi.js
+
+const API_TOKEN = "a0d7733d8434b8d04f336873a61f9f09";
