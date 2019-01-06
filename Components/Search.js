@@ -16,6 +16,10 @@ class Search extends React.Component {
       }
   }
 
+  _displayDetailForFilm = (idFilm) => {
+    this.props.navigation.navigate("FilmDetail", {idFilm: idFilm})
+  }
+
   _loadFilms() {
     this.setState({isLoading: true})
     if(this.searchedText.length > 0) {
@@ -83,7 +87,7 @@ class Search extends React.Component {
         // data={this._films}
         data = {this.state.films}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({item}) => <FilmItem film={item} />}
+        renderItem={({item}) => <FilmItem film={item} displayDetailForFilm = {this._displayDetailForFilm}/>}
         onEndReachedThreshold = {0.5}
         onEndReached={() => {
           if(this.state.films.length > 0) {
@@ -102,7 +106,7 @@ class Search extends React.Component {
 
 const styles = StyleSheet.create ({
   main_container: {
-    marginTop: 30,
+    //marginTop: 30,
     flex:1
   },
   textinput: {
