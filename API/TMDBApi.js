@@ -2,10 +2,12 @@
 
 /* global fetch */
 
-const API_TOKEN = "a0d7733d8434b8d04f336873a61f9f09";
+//const API_TOKEN = "YOUR API_TOKEN";
 
-export function getFilmsFromApiWithSearchedText (text) {
-  const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + API_TOKEN + '&language=fr&query=' + text;
+import {API_TOKEN} from './API_TOKEN'
+
+export function getFilmsFromApiWithSearchedText (text, page) {
+  const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + API_TOKEN + '&language=fr&query=' + text + '&page' + page;
   return fetch(url)
     .then((response) => response.json())
     .catch((error) => console.error(error))
