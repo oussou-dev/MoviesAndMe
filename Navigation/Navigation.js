@@ -17,7 +17,7 @@ const SearchStackNavigator = createStackNavigator({
 
 const MoviesTabNavigator = createBottomTabNavigator({
   Search: {
-    screen: Search
+    screen: SearchStackNavigator
   },
   Favorites: {
     screen: Favorites
