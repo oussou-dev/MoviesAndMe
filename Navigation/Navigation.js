@@ -16,6 +16,4 @@ const SearchStackNavigator = createStackNavigator({
 
 const AppContainer = createAppContainer(SearchStackNavigator);
 
-// export default SearchStackNavigator
-
 export default AppContainer;
