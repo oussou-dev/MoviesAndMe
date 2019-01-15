@@ -43,6 +43,20 @@ class FilmDetail extends React.Component {
     this.props.dispatch(action)
   }
 
+ _displayFavoriteImage() {
+    var sourceImage = require('../Images/ic_favorite_border.png')
+    if (this.props.favoritesFilm.findIndex(item => item.id === this.state.film.id) !== -1) {
+      sourceImage = require('../Images/ic_favorite.png')
+    }
+    
+    return (
+      <Image
+        style={styles.favorite_image}
+        source={sourceImage}
+      />
+    )
+}
+
   _displayFilm() {
     const { film } = this.state
     if (film != undefined) {
@@ -78,21 +92,7 @@ class FilmDetail extends React.Component {
     }
   }
 
-  _displayFavoriteImage() {
-    var sourceImage = require('../Images/ic_favorite_border.png')
-    if (this.props.favoritesFilm.findIndex(item => item.id === this.state.film.id) != -1) {
-      sourceImage = require('../Images/ic_favorite.png')
-    }
-    
-    return (
-      <Image
-        style={styles.favorite_image}
-        source={sourceImage}
-      />
-    )
-}
-
-  render() {
+   render() {
     return (
       <View style={styles.main_container}>
         {this._displayLoading()}
