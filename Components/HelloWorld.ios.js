@@ -1,29 +1,12 @@
 import React from 'react'
-import { StyleSheet, View, Platform } from 'react-native'
-import HelloWorld from './HelloWorld'
+import { Text } from 'react-native'
 
-class Test extends React.Component {
+class HelloWorld extends React.Component  {
   render() {
     return (
-      <View style={styles.main_container}>
-          <HelloWorld />
-      </View>
+      <Text>  Hello IOS </Text>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  main_container: {
-    flex:1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }, /*
-  subview_container: {
-    backgroundColor: Platform.OS === 'ios' ? 'red' : 'blue',
-    width: 50,
-    height:50
-  }
-  */
-})
-
-export default Test
+export default HelloWorld
